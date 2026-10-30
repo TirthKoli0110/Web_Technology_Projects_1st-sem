@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search an Element in an Array</title>
+    <style>
+        body {
+            background-color: lightblue;
+            font-family: Arial;
+            text-align: center;
+            margin-top: 50px;
+        }
+        h2 {
+            color: darkblue;
+        }
+    </style>
+</head>
+<body>
+    <h2>Search an Element in an Array</h2>
+
+    <h3>
+    <script>
+        function searchElement(arr, key) {
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i] == key) {
+                    return i + 1;
+                }
+            }
+            return -1;
+        }
+
+        var n = parseInt(prompt("Enter array size:"));
+        var arr = [];
+
+        for (var i = 0; i < n; i++) {
+            arr[i] = parseInt(prompt("Enter element " + (i + 1) + ":"));
+        }
+
+        var key = parseInt(prompt("Enter element to search:"));
+        var result = searchElement(arr, key);
+
+        document.write("Array: " + arr + "<br>");
+
+        if (result != -1) {
+            document.write("Element found at position: " + result);
+        } else {
+            document.write("Element not found in the array.");
+        }
+    </script>
+    </h3>
+</body>
+</html>
