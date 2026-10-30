@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Form</title>
+
+    <style>
+        body {
+            background-color: rgb(236, 14, 14);
+            font-family: Arial;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .box {
+            background-color: white;
+            padding: 25px;
+            width: 300px;
+            margin: auto;
+            border-radius: 10px;
+        }
+
+        input, button {
+            padding: 10px;
+            margin: 10px;
+        }
+
+        h2 {
+            color: darkblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h2>Login Form</h2>
+
+        <form onsubmit="return validate()">
+            <input type="text" id="user"
+                   placeholder="Enter username"><br>
+
+            <input type="password" id="pass"
+                   placeholder="Enter password"><br>
+
+            <button type="submit">Login</button>
+        </form>
+
+        <p id="msg"></p>
+    </div>
+
+    <script>
+        function validate() {
+            var u = document.getElementById("user").value;
+            var p = document.getElementById("pass").value;
+            var msg = document.getElementById("msg");
+
+            if (u == "" || p == "") {
+                msg.innerHTML = "Fields cannot be blank!";
+                return false;
+            }
+
+            if (/^[@0-9]/.test(u)) {
+                msg.innerHTML =
+                    "Username cannot start with @ or a number!";
+                return false;
+            }
+
+            if (p.length < 6 || p.length > 12) {
+                msg.innerHTML =
+                    "Password must be 6 to 12 characters!";
+                return false;
+            }
+
+            msg.innerHTML = "Validation successful!";
+            return false;
+        }
+    </script>
+</body>
+</html>
