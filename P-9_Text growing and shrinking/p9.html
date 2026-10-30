@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text Growing and Shrinking</title>
+
+    <style>
+        body {
+            background-color: rgb(229, 253, 14);
+            text-align: center;
+            font-family: Arial;
+        }
+
+        h2 {
+            color: darkblue;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Text Growing and Shrinking</h2>
+
+    <p id="text" style="font-size: 20px; color: red;">
+        Welcome to JavaScript
+    </p>
+
+    <script>
+        var size = 20;
+        var grow = true;
+
+        function changeText() {
+            if (grow) {
+                size++;
+                if (size >= 50) {
+                    grow = false;
+                }
+            } else {
+                size--;
+                if (size <= 20) {
+                    grow = true;
+                }
+            }
+
+            document.getElementById("text").style.fontSize =
+                size + "px";
+        }
+
+        setInterval(changeText, 100);
+    </script>
+</body>
+</html>
