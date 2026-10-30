@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>String Functions</title>
+    <style>
+        body {
+            background-color: rgb(245, 192, 19);
+            font-family: Arial;
+            text-align: center;
+            margin-top: 50px;
+        }
+        h2 {
+            color: darkblue;
+        }
+        button {
+            padding: 8px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2>JavaScript Built-in String Functions</h2>
+
+    <h3>
+    <script>
+        function findVowel(str) {
+            str = str.toLowerCase();
+
+            for (var i = 0; i < str.length; i++) {
+                if ("aeiou".includes(str.charAt(i))) {
+                    return i + 1;
+                }
+            }
+            return "No vowel found";
+        }
+
+        function reverseNumber(num) {
+            return num.toString().split("").reverse().join("");
+        }
+
+        var str = prompt("Enter a string:");
+        document.write("String: " + str + "<br>");
+        document.write("Position of left-most vowel: "
+                       + findVowel(str) + "<br><br>");
+
+        var num = prompt("Enter a number:");
+        document.write("Number: " + num + "<br>");
+        document.write("Reversed number: "
+                       + reverseNumber(num));
+    </script>
+    </h3>
+</body>
+</html>
